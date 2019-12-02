@@ -12,11 +12,11 @@ public class GridAdapter extends BaseAdapter {
 
     private int[] imglist;
     private String[] namelist;
-    private String[] pricelist;
+    private Integer[] pricelist;
 
     private Context context;
 
-    public GridAdapter(Context context, int[] imglist, String[] namelist, String[] pricelist) {
+    public GridAdapter(Context context, int[] imglist, String[] namelist, Integer[] pricelist) {
         this.context = context;
 
         this.imglist = imglist;
@@ -55,7 +55,8 @@ public class GridAdapter extends BaseAdapter {
 
             food_img.setImageResource(imglist[position]);
             food_name.setText(namelist[position]);
-            food_price.setText(pricelist[position]);
+            food_price.setText(pricelist[position] + "원");
+
         } else {
             grid = (View) convertView;
         }
